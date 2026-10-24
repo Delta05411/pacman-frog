@@ -1,0 +1,43 @@
+
+:root{--bg:#f6f8f1;--card:#fff;--ink:#26301f;--sub:#6b7a5c;--accent:#3f7d2c;--accent2:#e8a21a;--line:#dfe6d2;--max:46rem}
+@media(prefers-color-scheme:dark){:root{--bg:#161b12;--card:#1f2619;--ink:#e6ecdc;--sub:#9fb08c;--accent:#8fd16e;--accent2:#f0b84a;--line:#2e3a25}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.85 "Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic UI","Meiryo",system-ui,sans-serif}
+a{color:var(--accent)}
+a:hover{color:var(--accent2)}
+header.site{background:var(--accent);color:#fff;padding:1.1rem 16px .5rem}
+header.site .in,main,footer .in{max-width:var(--max);margin:0 auto}
+header.site .title{font-size:1.5rem;font-weight:700;letter-spacing:.08em;color:#fff;text-decoration:none}
+header.site .tag{font-size:.78rem;opacity:.9;margin:.2rem 0 .6rem}
+nav.main{display:flex;flex-wrap:wrap;gap:.2rem .9rem;font-size:.9rem;padding:.3rem 0 .4rem}
+nav.main a{color:#fff;text-decoration:none;opacity:.92;white-space:nowrap}
+nav.main a:hover{text-decoration:underline;opacity:1;color:#fff}
+main{padding:1.5rem 16px 3rem}
+article,.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:1.4rem 1.5rem;margin-bottom:1.5rem;overflow-wrap:anywhere}
+h1.entry{font-size:1.5rem;line-height:1.45;margin:.2rem 0 .6rem}
+.meta{font-size:.82rem;color:var(--sub);margin-bottom:1rem}
+.meta a{color:var(--sub)}
+.entry-body img{max-width:100%;height:auto;border-radius:4px}
+.entry-body h2,.entry-body h3,.entry-body h4{line-height:1.4;margin:1.8em 0 .6em;border-left:5px solid var(--accent);padding-left:.6em}
+.entry-body table{border-collapse:collapse;max-width:100%;display:block;overflow-x:auto}
+.entry-body td,.entry-body th{border:1px solid var(--line);padding:.3em .6em}
+.entry-body iframe{max-width:100%}
+.entry-body blockquote{margin:1em 0;padding:.2em 1em;border-left:4px solid var(--line);color:var(--sub)}
+.entry-body ul.wp-block-gallery{list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:.6rem}
+ul.plain{list-style:none;padding:0;margin:0}
+ul.plain li{padding:.45rem 0;border-bottom:1px dashed var(--line);display:flex;gap:.9rem;align-items:baseline}
+ul.plain time{font-size:.8rem;color:var(--sub);white-space:nowrap;min-width:7.6em}
+h2.sec{font-size:1.15rem;margin:0 0 .8rem;color:var(--accent)}
+.cats a{display:inline-block;margin:.15rem .3rem .15rem 0;padding:.05rem .65rem;border:1px solid var(--line);border-radius:99px;font-size:.82rem;text-decoration:none}
+.comments{margin-top:2rem;border-top:2px solid var(--line);padding-top:1rem}
+.comments h2{font-size:1.05rem}
+.comments .note{font-size:.8rem;color:var(--sub)}
+.comment{border:1px solid var(--line);border-radius:8px;padding:.7rem 1rem;margin:.8rem 0;background:var(--bg)}
+.comment .who{font-size:.82rem;color:var(--sub)}
+.comment .who b{color:var(--ink)}
+.comment .reply{margin-left:1.2rem}
+.pn{display:flex;justify-content:space-between;gap:1rem;font-size:.9rem;margin:1.5rem 0 0}
+footer{border-top:1px solid var(--line);color:var(--sub);font-size:.8rem;padding:1.2rem 16px 2.5rem;text-align:center}
+input.q{width:100%;padding:.6rem .8rem;font-size:1rem;border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--ink)}
+@media(max-width:560px){article,.card{padding:1.1rem 1rem}ul.plain li{flex-direction:column;gap:0}}

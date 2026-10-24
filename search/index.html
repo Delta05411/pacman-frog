@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>サイト内検索 | ハバネロの蔵</title>
+<meta name="description" content="ハバネロの蔵のサイト内検索">
+<link rel="canonical" href="https://www.pacman-frog.com/search/">
+<meta property="og:title" content="サイト内検索 | ハバネロの蔵"><meta property="og:type" content="website">
+<meta property="og:url" content="https://www.pacman-frog.com/search/"><meta property="og:site_name" content="ハバネロの蔵">
+<meta property="og:description" content="ハバネロの蔵のサイト内検索">
+
+<link rel="stylesheet" href="/assets/style.css">
+</head><body>
+<header class="site"><div class="in">
+<a class="title" href="/">ハバネロの蔵</a>
+<div class="tag">ベルツノガエル・クランウェルツノガエルの飼育情報サイト</div>
+<nav class="main"><a href="/">ホーム</a><a href="/horned-frog/">Horned Frog</a><a href="/page-3360/">動物分類学上の位置付け</a><a href="/page-3362/">ベルツノガエル</a><a href="/page-3366/">クランウェルツノガエル</a><a href="/page-3368/">アルビノツノガエル</a><a href="/archive/">記事一覧</a><a href="/search/">検索</a></nav>
+</div></header>
+<main>
+<section class="card"><h1 class="entry">サイト内検索</h1>
+<input class="q" id="q" type="search" placeholder="キーワードを入力（例：餌、病気、オタマジャクシ）" autofocus>
+<p class="meta" id="cnt"></p><ul class="plain" id="res"></ul></section>
+<script>
+(function(){var idx=[],q=document.getElementById('q'),res=document.getElementById('res'),cnt=document.getElementById('cnt');
+function norm(s){return (s||'').toLowerCase().normalize('NFKC')}
+function run(){var w=norm(q.value).split(/\s+/).filter(Boolean);res.innerHTML='';
+if(!w.length){cnt.textContent='';return}
+var hit=idx.filter(function(p){var h=norm(p.t+' '+p.x+' '+p.c.join(' '));return w.every(function(k){return h.indexOf(k)>=0})});
+cnt.textContent=hit.length+'件';
+hit.slice(0,100).forEach(function(p){var li=document.createElement('li');var t=document.createElement('time');t.textContent=p.d;var a=document.createElement('a');a.href=p.u;a.textContent=p.t;li.appendChild(t);li.appendChild(a);res.appendChild(li)})}
+fetch('/search-index.json').then(function(r){return r.json()}).then(function(j){idx=j;run()});
+q.addEventListener('input',run);
+var m=location.search.match(/[?&]q=([^&]*)/);if(m){q.value=decodeURIComponent(m[1].replace(/\+/g,' '));}
+})();
+</script>
+</main>
+<footer><div class="in">© 2005–2026 ハバネロの蔵（ハバネロ） / <a href="/archive/">記事一覧</a> / <a href="/search/">サイト内検索</a></div></footer>
+</body></html>
